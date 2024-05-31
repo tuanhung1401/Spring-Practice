@@ -4,13 +4,15 @@ public class Movie {
     private String title;
     private int runtime;
     private String releaseDate;
+    private String description;
 
     public Movie(){}
 
-    public Movie(String title, int runtime, String releaseDate) {
+    public Movie(String title, int runtime, String releaseDate, String description) {
         this.title = title;
         this.runtime = runtime;
         this.releaseDate = releaseDate;
+        this.description = description;
     }
 
     public String getTitle() {
@@ -36,4 +38,8 @@ public class Movie {
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
+
+    public String getDescription() { return description;}
+
+    public void setDescription(String description) { this.description = description; }
 }

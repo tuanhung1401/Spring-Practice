@@ -3,22 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Best Movies of 2024</title>
+    <title>Movie Detail</title>
     <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/main.css}"/>
 </head>
 <body>
 <main role="main" class="container">
     <div class="starter-template">
-        <h1>Best Movies of 2024 (as of Q2/2024)</h1>
-    </div>
-    <ul>
-        <li th:each="movie, iterStat : ${movies}">
-            <a th:href="@{/movie/{index}(index=${iterStat.index})}" th:text="${movie.title}">Movie Title</a>
-        </li>
-    </ul>
-    <div>
-        <a th:href="@{/add-movie}" class="btn btn-primary">Add Movie</a>
+        <h1 th:text="${movie.title}">Movie Title</h1>
+        <p><strong>Runtime:</strong> <span th:text="${movie.runtime}">Runtime</span> minutes</p>
+        <p><strong>Release Date:</strong> <span th:text="${movie.releaseDate}">Release Date</span></p>
+        <p><strong>Description:</strong> <span th:text="${movie.description}">Description</span></p>
+        <a th:href="@{/edit-movie/{index}(index=${index})}" class="btn btn-secondary">Edit</a>
     </div>
 </main>
 <script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
